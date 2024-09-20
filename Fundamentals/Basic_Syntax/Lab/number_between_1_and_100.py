@@ -4,7 +4,7 @@ while True:
         print(f'The number {num} is between 1 and 100')
         break
 
-// second solution
+# second solution
 
 num = float(input())
 
