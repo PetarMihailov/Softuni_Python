@@ -1,14 +1,8 @@
 n = int(input())
-include = input()
+word = input()
 
-text = []
-filter = []
+strings = [input() for _ in range(n)]
+filtered = [el for el in strings if word in el]
 
-for i in range(n):
-    word = input()
-    text.append(word)
-    if include in word:
-        filter.append(word)
-
-print(text)
-print(filter)
+print(strings)
+print(filtered)
