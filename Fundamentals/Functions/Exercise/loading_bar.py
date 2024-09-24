@@ -1,5 +1,5 @@
 def loading_bar(n):
-    bar = [".", ".", ".", ".", ".", ".", ".", ".", ".", "."]
+    bar = ["."] * 10
     n //= 10
 
     for index in range(n):
