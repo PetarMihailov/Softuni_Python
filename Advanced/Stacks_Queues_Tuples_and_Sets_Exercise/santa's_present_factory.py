@@ -50,3 +50,66 @@ if magics:
 
 for present, count in sorted(crafted_presents.items()):
     print(f"{present}: {count}")
+
+# second solution
+
+from collections import deque
+
+def check(present):
+    if present["Doll"]["qty"] >= 1 and  present["Wooden train"]["qty"] >= 1:
+        return True
+    elif present["Teddy bear"]["qty"] >= 1 and present["Bicycle"]["qty"] >= 1:
+        return True
+    return False
+
+
+materials = [el for el in map(int, input().split())]
+magics = deque([el for el in map(int, input().split())])
+
+presents = {"Doll": {"magic": 150, "qty": 0},
+           "Wooden train": {"magic": 250, "qty": 0},
+           "Teddy bear": {"magic": 300, "qty": 0},
+           "Bicycle": {"magic": 400, "qty": 0}}
+
+while materials and magics:
+    material, magic = materials.pop(), magics.popleft()
+    result = material * magic
+    is_equal = False
+
+    if material == 0 and magic == 0:
+        continue
+    elif material == 0:
+        magics.appendleft(magic)
+        continue
+    elif magic == 0:
+        materials.append(material)
+        continue
+
+    if result < 0:
+        result = material + magic
+        materials.append(result)
+        continue
+
+    for data in presents.values():
+        if result == data["magic"]:
+            data["qty"] += 1
+            is_equal = True
+            break
+
+    if not is_equal:
+        materials.append(material + 15)
+
+
+if check(presents):
+    print("The presents are crafted! Merry Christmas!")
+else:
+    print("No presents this Christmas!")
+
+if materials:
+    print(f"Materials left: {', '.join(map(str, materials[::-1]))}")
+if magics:
+    print(f"Magic left: {', '.join(map(str, magics))}")
+
+for key, val in sorted(presents.items()):
+    if val["qty"] > 0:
+        print(f"{key}: {val['qty']}")
