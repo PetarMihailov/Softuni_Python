@@ -10,3 +10,15 @@ for row in range(rows):
 
 print(result)
 print(matrix)
+
+# second solution
+
+rows, cols = [int(el) for el in input().split(", ")]
+
+matrix = []
+
+for _ in range(rows):
+    matrix.append(list(map(int, input().split(", "))))
+
+print(sum([sum(el) for el in matrix]))
+print(matrix)
