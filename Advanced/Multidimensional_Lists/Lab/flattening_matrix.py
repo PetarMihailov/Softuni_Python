@@ -8,7 +8,7 @@ for _ in range(rows):
 
 print(matrix)
 
-# 
+# second solution
 
 rows = int(input())
 
