@@ -8,8 +8,8 @@ for _ in range(n):
 
 diagonal = 0
 
-for i in range(n):
-    diagonal += matrix[i][i]
+for index in range(n):
+    diagonal += matrix[index][index]
 
 print(diagonal)
 
