@@ -41,3 +41,25 @@ for row, col in enumerate(matrix):
     if not row % 2 == 0:
         col.reverse()
     print(''.join(col))
+
+# third solution
+
+rows, cols = list(map(int, input().split()))
+word = input()
+
+index = 0
+
+matrix = []
+
+for row in range(rows):
+    row_elements = [None] * cols
+    if row % 2 == 0:
+        for col in range(cols):
+            row_elements[col] = word[index % len(word)]
+            index += 1
+        print(*row_elements, sep="")
+    else:
+        for col in range(cols-1, -1, -1):
+            row_elements[col] = word[index % len(word)]
+            index += 1
+        print(*row_elements, sep="")
