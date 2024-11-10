@@ -17,3 +17,27 @@ for row_index in range(rows):
     if row_index % 2 == 1:
         matrix[row_index].reverse()
     print("".join(matrix[row_index]))
+
+# second solution
+
+rows, cols = [int(el) for el in input().split()]
+string = input()
+
+matrix = []
+
+for row in range(rows):
+    matrix.append([0 for _ in range(cols)])
+
+string_index = 0
+
+for row in range(rows):
+    for col in range(cols):
+        matrix[row][col] = string[string_index]
+        string_index += 1
+        if string_index == len(string):
+            string_index = 0
+
+for row, col in enumerate(matrix):
+    if not row % 2 == 0:
+        col.reverse()
+    print(''.join(col))
