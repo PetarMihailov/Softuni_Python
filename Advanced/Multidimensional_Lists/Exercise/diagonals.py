@@ -24,3 +24,17 @@ print(f"Secondary diagonal: {', '.join([str(el) for el in secondary_diagonal])}.
 
 # second solution
 
+matrix = [[int(el) for el in input().split(", ")] for i in range(int(input()))]
+
+primary = []
+secondary = []
+col = len(matrix) - 1
+
+for index in range(len(matrix)):
+    primary.append(matrix[index][index])
+    secondary.append(matrix[index][col])
+
+    col -= 1
+
+print(f"Primary diagonal: {', '.join([str(el) for el in primary])}. Sum: {sum(primary)}")
+print(f"Secondary diagonal: {', '.join([str(el) for el in secondary])}. Sum: {sum(secondary)}")
