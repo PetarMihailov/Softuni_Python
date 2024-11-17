@@ -38,3 +38,20 @@ for index in range(len(matrix)):
 
 print(f"Primary diagonal: {', '.join([str(el) for el in primary])}. Sum: {sum(primary)}")
 print(f"Secondary diagonal: {', '.join([str(el) for el in secondary])}. Sum: {sum(secondary)}")
+
+# third solution
+
+matrix = [[int(el) for el in input().split(", ")] for i in range(int(input()))]
+
+primary = []
+secondary = []
+
+for row in range(len(matrix)):
+    for col in range(len(matrix[row])):
+        if row == col:
+            primary.append(matrix[row][col])
+        if row+col == len(matrix)-1:
+            secondary.append(matrix[row][col])
+
+print(f"Primary diagonal: {', '.join([str(el) for el in primary])}. Sum: {sum(primary)}")
+print(f"Secondary diagonal: {', '.join([str(el) for el in secondary])}. Sum: {sum(secondary)}")
