@@ -4,7 +4,7 @@ def print_matrix(matrix):
 
 
 def is_valid_command(command, rows, cols):
-    if len(command) != 5 or command[0] != "swap":
+    if not len(command) == 5 or not command[0] == "swap":
         return False
 
     try:
