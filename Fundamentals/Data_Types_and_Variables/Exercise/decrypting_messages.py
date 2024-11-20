@@ -8,3 +8,12 @@ for _ in range(n):
     message.append(chr(letter))
 
 print("".join(message))
+
+# second solutiuon
+
+key = int(input())
+lines = int(input())
+
+message = [chr(ord(input())+key) for _ in range(lines)]
+
+print(''.join(message))
