@@ -21,3 +21,32 @@ if not flag:
     print("UNBALANCED")
 else:
     print("BALANCED")
+
+# second solution
+
+lines = int(input())
+
+brackets = []
+balanced = True
+
+for _ in range(lines):
+    char = input()
+    if not char in "(,)":
+        continue
+    elif char == "(":
+        brackets.append(char)
+    elif char == ")" and not brackets:
+        balanced = False
+        break
+    elif char == ")" and not brackets.pop() == "(":
+        balanced = False
+        break
+
+    if len(brackets) > 1:
+        balanced = False
+        break
+
+if balanced:
+    print("BALANCED")
+else:
+    print("UNBALANCED")
