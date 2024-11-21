@@ -29,3 +29,19 @@ for num in sequence:
     message += text.pop(index)
 
 print(message)
+
+# third solution
+
+sequence = input().split()
+text = list(input())
+
+message = ""
+
+for num in sequence:
+    index = sum(int(digit) for digit in num)
+    index %= len(text)
+
+    message += text.pop(index)
+
+print(message)
+
