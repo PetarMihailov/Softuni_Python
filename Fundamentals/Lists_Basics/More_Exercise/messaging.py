@@ -13,3 +13,19 @@ for el in indexes:
     message.append(char)
 
 print("".join(message))
+
+# second solution
+
+sequence = input().split()
+text = list(input())
+
+message = ""
+
+for num in sequence:
+    index = sum(int(digit) for digit in num)
+    if index >= len(text):
+        index -= len(text)
+
+    message += text.pop(index)
+
+print(message)
