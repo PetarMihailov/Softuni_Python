@@ -1,9 +1,7 @@
 def check_index(idx_1, idx_2, string):
-    if 0 <= idx_1 < len(string) and 0 <= idx_2 < len(string) and idx_1 <= idx_2:
-        return True
-    return False
-
-
+    return 0 <= idx_1 <= idx_2 < len(string)
+      
+  
 username = input()
 command = input()
 
