@@ -20,3 +20,16 @@ cards.insert(0, top)
 cards.append(bottom)
 
 print(cards)
+
+# second solution
+
+cards = input().split()
+shuffles = int(input())
+
+for _ in range(shuffles):
+    half = len(cards) // 2
+    left_half = cards[:half]
+    right_half = cards[half:]
+    cards = [card for pair in zip(left_half, right_half) for card in pair]
+
+print(cards)
