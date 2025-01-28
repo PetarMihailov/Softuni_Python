@@ -28,3 +28,32 @@ print("Cells:")
 for cell in cells:
     print(f" - {cell}")
 print(f"Effort: {effort:.2f}\nTotal Fire: {sum(cells)}")
+
+# second solution
+
+data = input().split("#")
+water = int(input())
+
+ranges = {"High": range(81, 126),
+        "Medium": range(51, 81),
+        "Low": range(1, 51)}
+
+effort = 0
+cells = []
+
+for el in data:
+    fire, cell = el.split(" = ")
+    cell = int(cell)
+
+    if cell in ranges[fire] and water >= cell:
+        water -= cell
+        effort += cell * 0.25
+        cells.append(cell)
+
+
+print("Cells:")
+for cell in cells:
+    print(f" - {cell}")
+print(f"Effort: {effort:.2f}")
+print(f"Total Fire: {sum(cells)}")
+
