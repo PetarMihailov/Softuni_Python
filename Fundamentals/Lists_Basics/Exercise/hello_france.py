@@ -33,3 +33,37 @@ if budget + sum(sell_items) >= TICKET:
     print("Hello, France!")
 else:
     print("Not enough money.")
+
+# second solution
+
+data = input().split("|")
+budget = int(input())
+
+TICKET = 150
+
+prices = {
+    "Clothes": 50,
+    "Shoes": 35,
+    "Accessories": 20.50
+}
+
+bought = []
+
+for el in data:
+    item, price = el.split("->")
+    price = float(price)
+
+    if item in prices and price <= prices.get(item) and budget >= price:
+        bought.append(price)
+        budget -= price
+
+sales = [item * 1.4 for item in bought]
+profit = sum(sales) - sum(bought)
+
+print(*[f"{item:.2f}" for item in sales])
+print(f"Profit: {profit:.2f}")
+
+if budget + sum(sales) >= TICKET:
+    print("Hello, France!")
+else:
+    print("Not enough money.")
