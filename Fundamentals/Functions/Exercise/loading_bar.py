@@ -11,3 +11,21 @@ def loading_bar(n):
 percentage = int(input())
 
 print(loading_bar(percentage))
+
+# second solution
+
+def loading_bar(num):
+    border = num // 10
+    bar = ["."] * 10
+    dots = bar[border:]
+    percent = ["%"] * border
+    bar = percent + dots
+
+    if num == 100:
+        return f'{num}% Complete!\n[{"".join(bar)}]'
+    return f'{num}% [{"".join(bar)}]\nStill loading...'
+
+
+number = int(input())
+
+print(loading_bar(number))
