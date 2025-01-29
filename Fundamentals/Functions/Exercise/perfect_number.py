@@ -9,3 +9,12 @@ number = int(input())
 
 print(perfect(number))
 
+# second solution
+
+def perfect(num):
+    return "We have perfect number!" if sum([el for el in range(1, num) if num % el == 0]) == num else "It's not so perfect."
+
+
+number = int(input())
+
+print(perfect(number))
