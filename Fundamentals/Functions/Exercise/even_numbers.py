@@ -7,3 +7,13 @@ def even_numbers(nums):
 numbers = input()
 
 print(even_numbers(numbers))
+
+# second solution
+
+def even_numbers(data):
+    return list(filter(lambda x: x % 2 == 0, map(int, data.split())))
+
+
+number = input()
+
+print(even_numbers(number))
