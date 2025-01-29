@@ -17,3 +17,23 @@ valid = password_validator(password)
 
 if valid:
     print("Password is valid")
+
+# second solution
+
+def password_validator(password):
+    errors = []
+    if len(password) not in range(6, 11):
+        errors.append("Password must be between 6 and 10 characters")
+    if not password.isalnum():
+        errors.append("Password must consist only of letters and digits")
+    if sum(el.isdigit() for el in password) < 2:
+        errors.append("Password must have at least 2 digits")
+
+    if errors:
+        return "\n".join(errors)
+    else:
+        return "Password is valid"
+
+data = input()
+
+print(password_validator(data))
