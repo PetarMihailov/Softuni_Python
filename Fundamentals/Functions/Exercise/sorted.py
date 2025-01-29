@@ -5,3 +5,13 @@ def sorting(nums):
 numbers = input()
 
 print(sorting(numbers))
+
+# second solution
+
+def sorting(data):
+   return sorted(map(int, data.split()))
+
+
+number = input()
+
+print(sorting(number))
