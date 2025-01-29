@@ -6,3 +6,13 @@ def palindrome(nums):
 numbers = input()
 
 print(palindrome(numbers))
+
+# second solution
+
+def palindrome(word):
+    return "True" if word == word[::-1] else "False"
+
+
+data = input()
+
+print("\n".join(map(palindrome, data.split(", "))))
