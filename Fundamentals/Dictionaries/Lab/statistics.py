@@ -37,7 +37,6 @@ while not data == 'statistics':
 
 print("Products in stock:")
 
-for key, val in products.items():
-    print(f"- {key}: {val}")
+[print(f"- {key}: {val}") for key, val in products.items()]
 
 print(f"Total Products: {len(products)}\nTotal Quantity: {sum(products.values())}")
