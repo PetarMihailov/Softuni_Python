@@ -29,3 +29,14 @@ def loading_bar(num):
 number = int(input())
 
 print(loading_bar(number))
+
+# third solution
+
+def loading_bar(percentage):
+    num = percentage // 10
+    bar = f'[{"%" * num}{"." * (10-num)}]'
+    return f"{percentage}% Complete!\n{bar}" if percentage == 100 else f"{percentage}% {bar}\nStill loading..."
+
+number = int(input())
+
+print(loading_bar(number))
